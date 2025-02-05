@@ -1,0 +1,192 @@
+/* General Styles */
+/* Ensure the html and body elements take up the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0 0 50px 0;  /* Bottom padding to prevent content from being hidden by the fixed footer */
+    font-family: "Book Antiqua", serif;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* ------------------------------ */
+/* navbar-toggler collapsed */
+/* ------------------------------ */
+
+.navbar-toggler {
+    size: 30px;
+}
+
+/* ------------------------------ */
+/* Buttons */
+/* ------------------------------ */
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 20px;
+    width: 150px;
+}
+
+/* Custom Oval-Shaped Buttons */
+.abutton {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 50px;  /* Pill-shaped */
+    background-color: #007bff;
+    color: #fff;
+    margin: 0 4px;
+}
+
+/* Hover and Focus States for Custom Buttons */
+.abutton:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    text-decoration: none;
+}
+
+.abutton:focus,
+.abutton:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Disabled Link Style */
+.nav-link.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* ------------------------------ */
+/* Footer */
+/* ------------------------------ */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;           /* Full width footer */
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ------------------------------ */
+/* Table Container & Table Styles */
+/* ------------------------------ */
+#tableContainer {
+    overflow-x: auto;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    font-size: 12px;
+    table-layout: fixed;  /* Enforce fixed column widths */
+}
+
+thead th {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+}
+
+tbody td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 12px;
+}
+
+/* Fix the width of the first column ("Die #") */
+table th:first-child,
+table td:first-child {
+    width: 150px;      /* Fixed width – adjust as needed */
+    min-width: 150px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ------------------------------ */
+/* Section Titles and Misc */
+/* ------------------------------ */
+.section-title {
+    font-weight: bold;
+    background-color: #e0e0e0;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Calculator Inputs & Results */
+.calc-input {
+    display: inline-block;
+    width: 120px;
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+}
+
+.result {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* ------------------------------ */
+/* Pagination Page Number Links */
+/* ------------------------------ */
+.page-number {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+}
+
+.page-number:hover {
+    text-decoration: underline;
+}
+
+.page-number.active {
+    font-weight: bold;
+    text-decoration: underline;
+}

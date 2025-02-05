@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Webpage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar (unchanged) -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="#">Die #</a>
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calculator</a>
+              <a class="nav-link" href="#">Phone Book</a>
+              <a class="nav-link" href="#">Events</a>
+              <a class="nav-link" href="pricelist.html">Pricelist</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (unchanged from your example) -->
+    <div class="container my-5">
+        <h1>Welcome to the Website</h1>
+        <p>This is a basic webpage with a navbar and footer.</p>
+
+        <!-- EXISTING Calculator Section (unchanged if you want to keep it) -->
+        <hr>
+        <h2>Numeric Calculator (Existing Example)</h2>
+        <div>
+          <input
+            id="val1"
+            type="tel"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="Enter first number"
+            class="calc-input"
+          >
+          <input
+            id="val2"
+            type="tel"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="Enter second number"
+            class="calc-input"
+          >
+        </div>
+        <div>
+          <button id="btnAdd">Add</button>
+          <button id="btnSubtract">Subtract</button>
+          <button id="btnMultiply">Multiply</button>
+          <button id="btnDivide">Divide</button>
+        </div>
+        <div class="result" id="resultDisplay">Result: </div>
+
+        <!-- NEW SECTION: Fraction-Based Dimensions -->
+        <hr>
+        <h2>Fraction-Based Dimensions</h2>
+
+        <!-- Min/Max Width -->
+        <div class="mb-2">
+          <label for="minWidth" class="form-label">Min Width (fraction allowed)</label>
+          <input 
+            id="minWidth" 
+            type="text" 
+            placeholder='e.g. 35 7/16 or 35.44'
+            class="calc-input"
+          >
+          <label for="maxWidth" class="form-label">Max Width (fraction allowed)</label>
+          <input 
+            id="maxWidth" 
+            type="text" 
+            placeholder='e.g. 36 1/8'
+            class="calc-input"
+          >
+        </div>
+
+        <!-- Min/Max Height -->
+        <div class="mb-2">
+          <label for="minHeight" class="form-label">Min Height (fraction allowed)</label>
+          <input 
+            id="minHeight" 
+            type="text" 
+            placeholder='e.g. 47 3/4'
+            class="calc-input"
+          >
+          <label for="maxHeight" class="form-label">Max Height (fraction allowed)</label>
+          <input 
+            id="maxHeight" 
+            type="text" 
+            placeholder='e.g. 48'
+            class="calc-input"
+          >
+        </div>
+
+        <!-- Number of Sections -->
+        <div class="mb-2">
+          <label for="numSections" class="form-label">Number of Sections</label>
+          <input 
+            id="numSections" 
+            type="number" 
+            class="calc-input" 
+            placeholder="e.g. 2"
+            min="1"
+          >
+        </div>
+
+        <!-- Checkboxes EXACT / INSTALLATION -->
+        <div class="mb-2">
+          <label>
+            <input type="radio" name="dimensionType" id="exactRadio" value="exact" checked>
+            EXACT
+          </label>
+          <label class="ms-4">
+            <input type="radio" name="dimensionType" id="installRadio" value="installation">
+            INSTALLATION
+          </label>
+        </div>
+
+        <!-- Button to trigger calculations -->
+        <div class="mb-2">
+          <button id="calcDimensionsBtn">Calculate Dimensions</button>
+        </div>
+
+        <!-- Results Display -->
+        <div class="result" id="dimensionsOutput" style="white-space: pre;"></div>
+        <!-- END NEW SECTION -->
+
+        <!-- Show/Hide Table Example (unchanged) -->
+        <button id="toggleTableButton">Hide Windows with 36" Width</button>
+        <div id="tableContainer">
+            <table>
+                <thead>
+                    <tr><th>Example Table</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Row 1</td></tr>
+                    <tr><td>Row 2</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Toast Notification (unchanged) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <!-- Toast message will be updated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (unchanged) -->
+    <footer class="text-center py-3 bg-dark text-light">
+        <p>&copy; 2025 M.K. Asgarali & Sons Ltd.</p>
+        <p>Designed and developed by Muhammad A. Asgarali</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

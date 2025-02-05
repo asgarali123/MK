@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Webpage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="die.html">Die #</a>
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calculator</a>
+              <a class="nav-link" href="#">Phone Book</a>
+              <a class="nav-link" href="#">Events</a>
+              <a class="nav-link" href="pricelist.html">Pricelist</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <button id="toggleTableButton">Windows with 36" Height</button>
+
+    <!-- The table is initially hidden -->
+    <div id="tableContainer" style="display: none;">
+    <table class="aluminium-table">
+        <thead>
+            <tr>
+                <th colspan="9">ALUMINIUM SLIDING WINDOWS</th>
+            </tr>
+            <tr>
+                <th colspan="9">36"</th>
+            </tr>
+            <tr>
+                <th rowspan="2">ITEMS</th>
+                <th rowspan="2">PCS</th>
+                <th colspan="2">MEASUREMENT</th>
+                <th colspan="2">REGULAR</th>
+                <th colspan="2">DIVISION</th>
+            </tr>
+            <tr>
+                <th>WIDTH</th>
+                <th>HEIGHT</th>
+                <th>PTD</th>
+                <th>W/ GRAIN</th>
+                <th>PTD</th>
+                <th>W/ GRAIN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>22-3</td>
+                <td>2 PCS</td>
+                <td>36</td>
+                <td>36</td>
+                <td>$1,496.95</td>
+                <td>$1,576.75</td>
+                <td>$1,838.09</td>
+                <td>$2,294.90</td>
+            </tr>
+            <tr>
+                <td>22-4</td>
+                <td>2 PCS</td>
+                <td>48</td>
+                <td>36</td>
+                <td>$1,714.64</td>
+                <td>$1,809.05</td>
+                <td>$1,977.43</td>
+                <td>$2,455.18</td>
+            </tr>
+            <tr>
+                <td>22-5</td>
+                <td>2 PCS</td>
+                <td>60</td>
+                <td>36</td>
+                <td>$1,932.32</td>
+                <td>$2,041.35</td>
+                <td>$2,220.84</td>
+                <td>$2,744.67</td>
+            </tr>
+            <tr>
+                <td>22-6</td>
+                <td>2 PCS</td>
+                <td>72</td>
+                <td>36</td>
+                <td>$2,150.01</td>
+                <td>$2,273.65</td>
+                <td>$2,464.25</td>
+                <td>$3,042.22</td>
+            </tr>
+            <tr>
+                <td>22-8</td>
+                <td>2 PCS</td>
+                <td>96</td>
+                <td>36</td>
+                <td>$2,585.39</td>
+                <td>$2,738.25</td>
+                <td>$2,951.07</td>
+                <td>$3,613.32</td>
+            </tr>
+            <tr>
+                <td colspan="9" class="section-title">WITH INSECT SCREEN</td>
+            </tr>
+            <tr>
+                <td>33-5</td>
+                <td>3 PCS</td>
+                <td>60</td>
+                <td>36</td>
+                <td>$2,274.51</td>
+                <td>$2,383.54</td>
+                <td>$2,642.05</td>
+                <td>$3,295.39</td>
+            </tr>
+            <tr>
+                <td>33-6</td>
+                <td>3 PCS</td>
+                <td>72</td>
+                <td>36</td>
+                <td>$2,492.20</td>
+                <td>$2,615.84</td>
+                <td>$2,885.46</td>
+                <td>$3,584.94</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <!-- Toast message will be updated dynamically -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
