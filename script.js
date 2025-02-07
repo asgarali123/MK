@@ -429,3 +429,81 @@ async function importFirebase() {
     }
   });
   
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fixed contacts (first five – remain in given order)
+    const fixedContacts = [
+      ["Jameel Asgarali", "+1-868-389-7418"],
+      ["Sayeed Asgarali", "+1-868-389-7419"],
+      ["Adam Asgarali", "+1-868-399-7939"],
+      ["Irshaad Alli", "+1-868-496-5748"],
+      ["Muzad", "+1-868-724-5120"]
+    ];
+  
+    // Additional contacts (raw data; phone numbers without formatting)
+    const additionalContactsRaw = [
+      ["Afraz", "3814156"],
+      ["Alisha", "7530333"],
+      ["Jerome", "3454369"],
+      ["Jervon", "4792046"],
+      ["Karissa", "3647439"],
+      ["Micah", "3990679"],
+      ["Rishi", "7169046"],
+      ["Sadika", "3786067"],
+      ["Saara", "3567290"],
+      ["Sham", "7863891"],
+      ["Shaquiel", "7738695"],
+      ["Zordia", "7195453"],
+      ["Joshua", "2878096"],
+      ["Laura", "2788584"],
+      ["Adil", "6892770"]
+    ];
+  
+    // Office numbers (raw data)
+    const officeContactsRaw = [
+      ["Office WhatsApp", "3897475"],
+      ["Caroni Office", "2997399"]
+    ];
+  
+    // Helper function: formats a 7-digit string into +1-868-xxx-xxxx
+    function formatPhoneNumber(rawNumber) {
+      const prefix = rawNumber.slice(0, 3);
+      const lineNumber = rawNumber.slice(3);
+      return `+1-868-${prefix}-${lineNumber}`;
+    }
+  
+    // Process additional contacts: format numbers and sort alphabetically by name
+    const additionalContacts = additionalContactsRaw
+      .map(contact => [contact[0], formatPhoneNumber(contact[1])])
+      .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
+  
+    // Process office contacts: format phone numbers
+    const officeContacts = officeContactsRaw.map(contact => {
+      return [contact[0], formatPhoneNumber(contact[1])];
+    });
+  
+    // Populate the Contacts table (first fixed contacts, then additional contacts)
+    const contactsTable = document.getElementById("contactsTable");
+    if (contactsTable) {
+      fixedContacts.forEach(contact => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${contact[0]}</td><td>${contact[1]}</td>`;
+        contactsTable.appendChild(tr);
+      });
+      additionalContacts.forEach(contact => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${contact[0]}</td><td>${contact[1]}</td>`;
+        contactsTable.appendChild(tr);
+      });
+    }
+  
+    // Populate the Office Numbers table
+    const officeTable = document.getElementById("officeTable");
+    if (officeTable) {
+      officeContacts.forEach(contact => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${contact[0]}</td><td>${contact[1]}</td>`;
+        officeTable.appendChild(tr);
+      });
+    }
+  });

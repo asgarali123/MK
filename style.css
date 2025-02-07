@@ -12,6 +12,10 @@ html, body {
     flex-direction: column;
 }
 
+p, li {
+    font-size: medium;
+}
+
 /* Main Content */
 .container {
     max-width: 960px;
@@ -189,4 +193,42 @@ table td:first-child {
 .page-number.active {
     font-weight: bold;
     text-decoration: underline;
+}
+
+
+/* ------------------------------ */
+/* Style for the form container */
+/* ------------------------------ */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between each label-input pair */
+}
+
+/* Style for each label-input pair */
+.form-group {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    width: 100%; /* Ensure full width */
+}
+
+/* Style for labels */
+.form-group label {
+    width: 150px; /* Fixed width for labels */
+    text-align: left; /* Align text to the left */
+    margin-right: 10px; /* Space between label and input */
+}
+
+/* Style for inputs */
+.form-group input {
+    flex: 1; /* Allow input to take remaining space */
+    max-width: 200px; /* Limit input width */
+    align-items: right;
+}
+
+/* Add this CSS rule to target the last form-group (which contains the button) */
+.form-container .form-group:last-child {
+    justify-content: center;
 }
