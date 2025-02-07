@@ -456,7 +456,8 @@ async function importFirebase() {
       ["Zordia", "7195453"],
       ["Joshua", "2878096"],
       ["Laura", "2788584"],
-      ["Adil", "6892770"]
+      ["Adil", "6892770"],
+      // ["",""],
     ];
   
     // Office numbers (raw data)
