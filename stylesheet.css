@@ -1,0 +1,121 @@
+:root{
+  --bg:#141414;
+  --card:#1e1e1e;
+  --text:#ffffff;
+  --muted:#bdbdbd;
+  --accent:#4da3ff;
+  --shadow: 0 10px 25px rgba(0,0,0,.25);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+.app-header{padding:16px 20px;border-bottom:1px solid #2a2a2a}
+.app-header h1{margin:0;font-size:1.1rem;font-weight:600}
+
+.grid{
+  display:grid;
+  gap:16px;
+  padding:16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card{
+  perspective: 1200px;
+}
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height: 180px;
+  transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card.flipped .card-inner{
+  transform: rotateY(180deg);
+}
+
+.face{
+  position:absolute;
+  inset:0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  background: var(--card);
+  border:1px solid #2a2a2a;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.front{
+  /* Front shows job description only */
+}
+
+.front .role{
+  font-size:1.25rem;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.front .hint{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.back{
+  transform: rotateY(180deg);
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.small{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.name{
+  font-weight:700;
+  text-align:right;
+}
+
+.company{
+  text-align:right;
+  font-size:.9rem;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+.contact{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  text-align:right;
+}
+
+.link{
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:600;
+  word-break:break-all;
+}
+
+.link:active{opacity:.8}
+
+/* Tap target */
+.card-inner{cursor:pointer}
+
+/* Prevent links from looking cramped on small screens */
+@media (max-width:380px){
+  .card-inner{height:200px}
+  .front .role{font-size:1.15rem}
+}
